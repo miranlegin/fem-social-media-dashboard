@@ -1,0 +1,36 @@
+{
+  "dashboard": [
+    {
+      "icon": "facebook",
+      "url": "@nathanf",
+      "number": "1987",
+      "text": "Followers",
+      "stats": "12 Today",
+      "trend": "increase"
+    },
+    {
+      "icon": "twitter",
+      "url": "@nathanf",
+      "number": "1044",
+      "text": "Followers",
+      "stats": "99 Today",
+      "trend": "increase"
+    },
+    {
+      "icon": "instagram",
+      "url": "@realnathanf",
+      "number": "11k",
+      "text": "Followers",
+      "stats": "1099 Today",
+      "trend": "increase"
+    },
+    {
+      "icon": "youtube",
+      "url": "Nathan F.",
+      "number": "8239",
+      "text": "Subscribers",
+      "stats": "144 Today",
+      "trend": "decrease"
+    }
+  ]
+}

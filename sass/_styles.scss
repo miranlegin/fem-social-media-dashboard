@@ -1,1 +1,37 @@
-// general styling
+body {
+  font-weight: $fw-400;
+  font-size: $fs-base;
+  font-family: $ff-base;
+
+  line-height: 1;
+
+  background-color: var(--body-bg);
+  color: var(--text);
+
+  display: grid;
+  place-items: center;
+
+  padding-block: 2.5rem;
+}
+
+.container {
+  width: Min(calc(100% - 3rem), 1110px);
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+dl {
+  display: flex;
+  font-weight: $fw-700;
+  color: var(--text-muted);
+}
+
+.switch {
+  float: right;
+}

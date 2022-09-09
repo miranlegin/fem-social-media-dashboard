@@ -1,1 +1,45 @@
-// variables
+// COLORS
+
+:root {
+  --toggle-button: hsl(230, 22%, 74%);
+  --body-bg: hsl(0, 0%, 100%);
+  --top-pattern: hsl(225, 100%, 98%);
+  --card-bg: hsl(227, 47%, 96%);
+  --text: hsl(230, 17%, 14%);
+  --text-muted: hsl(228, 12%, 44%);
+}
+
+[data-theme='dark'] {
+  --toggle-button: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+  --body-bg: hsl(230, 17%, 14%);
+  --top-pattern: hsl(232, 19%, 15%);
+  --card-bg: hsl(228, 28%, 20%);
+  --text: hsl(0, 0%, 100%);
+  --text-muted: hsl(228, 34%, 66%);
+}
+
+// trend
+
+$positive: hsl(163, 72%, 41%);
+$negative: hsl(356, 69%, 56%);
+
+// social network
+
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+$youtube: hsl(348, 97%, 39%);
+
+// SPACING
+
+$body-padding: 1.5rem;
+$container-width: 1110px;
+$card-max-width: 255px;
+
+// TYPOGRAPHY
+
+$fs-base: 0.875rem;
+$ff-base: 'Inter', sans-serif;
+
+$fw-400: 400;
+$fw-700: 700;
