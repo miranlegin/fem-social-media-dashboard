@@ -14,121 +14,147 @@
 </head>
 
 <body>
-    <main class="container">
-
+    <header class="container">
+    <div>
+        <h1>Social Media Dashboard</h1>
+        <dl class="heading-stats">
+            <dt>Total Followers:</dt>
+            <dd>23,004</dd>
+        </dl>
+    </div>
     <div class="switch">
-        <button class="toggle">Dark Mode</button>
-
         <label>
             Dark Mode
-            <input type="checkbox" role="switch">
+            <input type="checkbox" role="switch" id="toggle-darkmode">
+            <span></span>
         </label>
     </div>
+</header>
 
-    <h1>Social Media Dashboard</h1>
-    <dl>
-        <dt>Total Followers:</dt>
-        <dd>23,004</dd>
-    </dl>
-
-
-    <ul class="cards-holder">
-        <li class="card-dashboard" data-network="facebook">
-            <div class="dashboard-url">
-                <img src="svg/icon-facebook.svg" />
-                <span>@nathanf</span>
-            </div>
-            <div class="dashboard-number">1987</div>
-            <div class="dashboard-text">Followers</div>
-            <div class="card-trend" data-trend="increase">12 Today</div>
-        </li>        <li class="card-dashboard" data-network="twitter">
-            <div class="dashboard-url">
-                <img src="svg/icon-twitter.svg" />
-                <span>@nathanf</span>
-            </div>
-            <div class="dashboard-number">1044</div>
-            <div class="dashboard-text">Followers</div>
-            <div class="card-trend" data-trend="increase">99 Today</div>
-        </li>        <li class="card-dashboard" data-network="instagram">
-            <div class="dashboard-url">
-                <img src="svg/icon-instagram.svg" />
-                <span>@realnathanf</span>
-            </div>
-            <div class="dashboard-number">11k</div>
-            <div class="dashboard-text">Followers</div>
-            <div class="card-trend" data-trend="increase">1099 Today</div>
-        </li>        <li class="card-dashboard" data-network="youtube">
-            <div class="dashboard-url">
-                <img src="svg/icon-youtube.svg" />
-                <span>Nathan F.</span>
-            </div>
-            <div class="dashboard-number">8239</div>
-            <div class="dashboard-text">Subscribers</div>
-            <div class="card-trend" data-trend="decrease">144 Today</div>
+<main class="container">
+    <h2 class="sr-only">Social media channels today</h2>
+    <ul class="cards-holder" data-cards="dashboard">
+        <li class="card-item" data-network="facebook">
+            <dl class="card-dashboard">
+                <dt class="dashboard-url">
+                    <img src="svg/icon-facebook.svg" alt="facebook" />
+                    <span class="sr-only">user</span>
+                    <span>@nathanf</span>
+                </dt>
+                <dd class="dashboard-number">1987</dd>
+                <dd class="dashboard-text">Followers</dd>
+                <dd class="card-trend" data-trend="increase"><span class="sr-only">increase </span>12 Today</dd>
+            </dl>
+        </li>        <li class="card-item" data-network="twitter">
+            <dl class="card-dashboard">
+                <dt class="dashboard-url">
+                    <img src="svg/icon-twitter.svg" alt="twitter" />
+                    <span class="sr-only">user</span>
+                    <span>@nathanf</span>
+                </dt>
+                <dd class="dashboard-number">1044</dd>
+                <dd class="dashboard-text">Followers</dd>
+                <dd class="card-trend" data-trend="increase"><span class="sr-only">increase </span>99 Today</dd>
+            </dl>
+        </li>        <li class="card-item" data-network="instagram">
+            <dl class="card-dashboard">
+                <dt class="dashboard-url">
+                    <img src="svg/icon-instagram.svg" alt="instagram" />
+                    <span class="sr-only">user</span>
+                    <span>@realnathanf</span>
+                </dt>
+                <dd class="dashboard-number">11k</dd>
+                <dd class="dashboard-text">Followers</dd>
+                <dd class="card-trend" data-trend="increase"><span class="sr-only">increase </span>1099 Today</dd>
+            </dl>
+        </li>        <li class="card-item" data-network="youtube">
+            <dl class="card-dashboard">
+                <dt class="dashboard-url">
+                    <img src="svg/icon-youtube.svg" alt="youtube" />
+                    <span class="sr-only">user</span>
+                    <span>Nathan F.</span>
+                </dt>
+                <dd class="dashboard-number">8239</dd>
+                <dd class="dashboard-text">Subscribers</dd>
+                <dd class="card-trend" data-trend="decrease"><span class="sr-only">decrease </span>144 Today</dd>
+            </dl>
         </li>    </ul>
-
 
     <h2>Overview - Today</h2>
-
-    <ul class="cards-holder">
-        <li class="card-overview">
-            <div class="overview-text">Page Views</div>
-            <div class="overview-icon">
-                <img src="svg/icon-facebook.svg" />
-            </div>
-            <div class="overview-number">87</div>
-            <div class="card-trend" data-trend="increase">3%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Likes</div>
-            <div class="overview-icon">
-                <img src="svg/icon-facebook.svg" />
-            </div>
-            <div class="overview-number">52</div>
-            <div class="card-trend" data-trend="decrease">2%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Likes</div>
-            <div class="overview-icon">
-                <img src="svg/icon-instagram.svg" />
-            </div>
-            <div class="overview-number">5462</div>
-            <div class="card-trend" data-trend="increase">2257%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Profile Views</div>
-            <div class="overview-icon">
-                <img src="svg/icon-instagram.svg" />
-            </div>
-            <div class="overview-number">52k</div>
-            <div class="card-trend" data-trend="increase">1375%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Retweets</div>
-            <div class="overview-icon">
-                <img src="svg/icon-twitter.svg" />
-            </div>
-            <div class="overview-number">117</div>
-            <div class="card-trend" data-trend="increase">303%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Likes</div>
-            <div class="overview-icon">
-                <img src="svg/icon-twitter.svg" />
-            </div>
-            <div class="overview-number">507</div>
-            <div class="card-trend" data-trend="increase">553%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Likes</div>
-            <div class="overview-icon">
-                <img src="svg/icon-youtube.svg" />
-            </div>
-            <div class="overview-number">107</div>
-            <div class="card-trend" data-trend="decrease">19%</div>
-        </li>        <li class="card-overview">
-            <div class="overview-text">Total Views</div>
-            <div class="overview-icon">
-                <img src="svg/icon-youtube.svg" />
-            </div>
-            <div class="overview-number">1407</div>
-            <div class="card-trend" data-trend="decrease">12%</div>
+    <ul class="cards-holder" data-cards="overview">
+        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Page Views</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-facebook.svg" alt="facebook" />
+                </dd>
+                <dd class="overview-number">87</dd>
+                <dd class="card-trend" data-trend="increase">3% <span class="sr-only">increase</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Likes</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-facebook.svg" alt="facebook" />
+                </dd>
+                <dd class="overview-number">52</dd>
+                <dd class="card-trend" data-trend="decrease">2% <span class="sr-only">decrease</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Likes</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-instagram.svg" alt="instagram" />
+                </dd>
+                <dd class="overview-number">5462</dd>
+                <dd class="card-trend" data-trend="increase">2257% <span class="sr-only">increase</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Profile Views</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-instagram.svg" alt="instagram" />
+                </dd>
+                <dd class="overview-number">52k</dd>
+                <dd class="card-trend" data-trend="increase">1375% <span class="sr-only">increase</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Retweets</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-twitter.svg" alt="twitter" />
+                </dd>
+                <dd class="overview-number">117</dd>
+                <dd class="card-trend" data-trend="increase">303% <span class="sr-only">increase</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Likes</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-twitter.svg" alt="twitter" />
+                </dd>
+                <dd class="overview-number">507</dd>
+                <dd class="card-trend" data-trend="increase">553% <span class="sr-only">increase</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Likes</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-youtube.svg" alt="youtube" />
+                </dd>
+                <dd class="overview-number">107</dd>
+                <dd class="card-trend" data-trend="decrease">19% <span class="sr-only">decrease</span></dd>
+            </dl>
+        </li>        <li class="card-item">
+            <dl class="card-overview">
+                <dt class="overview-text">Total Views</dt>
+                <dd class="overview-icon">
+                    <img src="svg/icon-youtube.svg" alt="youtube" />
+                </dd>
+                <dd class="overview-number">1407</dd>
+                <dd class="card-trend" data-trend="decrease">12% <span class="sr-only">decrease</span></dd>
+            </dl>
         </li>    </ul>
-
 </main>
     <script src="scripts/switch.js"></script>
 </body>

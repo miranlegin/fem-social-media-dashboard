@@ -1,46 +1,92 @@
 .cards-holder {
+  position: relative;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   column-gap: 1.875rem;
   row-gap: 1.5rem;
-  margin-top: 2.5rem;
+  margin-top: 0;
   margin-bottom: 3rem;
   padding-left: 0;
   list-style: none;
+
+  // 1175 = 1110px container + 1.5rem padding inline + 17px scrollbar
+  @media (min-width: 1175px) {
+    &[data-cards='dashboard'] {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        bottom: 50%;
+        width: 50vw;
+        height: 50vh;
+        background-color: var(--top-pattern);
+        transition: background-color $transition-duration;
+      }
+
+      &::before {
+        right: 50%;
+        border-bottom-left-radius: $overlay-radius;
+      }
+
+      &::after {
+        left: 50%;
+        border-bottom-right-radius: $overlay-radius;
+      }
+    }
+  }
 }
 
-.card-dashboard,
-.card-overview {
-  // deconstructed pancake
+.card-item {
   flex: 1 1 $card-max-width;
   background-color: var(--card-bg);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
   padding: 1.5rem;
+  cursor: pointer;
+  transition: background-color $transition-duration;
+
+  &:hover {
+    background-color: var(--card-bg-hover);
+  }
+
+  [data-cards='dashboard'] & {
+    position: relative;
+    padding-top: 2rem;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 0.25rem;
+      display: block;
+    }
+  }
 }
 
-.card-dashboard {
-  border-top: 0.25rem solid transparent;
-
-  &[data-network='facebook'] {
-    border-top-color: $facebook;
+[data-cards='dashboard'] {
+  [data-network='facebook']::before {
+    background-color: $facebook;
   }
 
-  &[data-network='twitter'] {
-    border-top-color: $twitter;
+  [data-network='twitter']::before {
+    background-color: $twitter;
   }
 
-  &[data-network='instagram'] {
-    border-image: linear-gradient(
-        to right,
-        hsl(37, 97%, 70%),
-        hsl(329, 70%, 58%)
-      )
-      1;
+  [data-network='instagram']::before {
+    background-image: linear-gradient(
+      to right,
+      hsl(37, 97%, 70%),
+      hsl(329, 70%, 58%)
+    );
   }
 
-  &[data-network='youtube'] {
-    border-top-color: $youtube;
+  [data-network='youtube']::before {
+    background-color: $youtube;
   }
 }
 
@@ -49,27 +95,25 @@
   padding-left: 0.75rem;
   place-self: end;
   font-weight: $fw-700;
-  font-size: 0.75rem;
+  font-size: var(--fs-100);
+  line-height: 1.2;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
 }
 
 [data-trend='increase'] {
   color: $positive;
   background-image: url(../svg/icon-up.svg);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
 }
 
 [data-trend='decrease'] {
   color: $negative;
   background-image: url(../svg/icon-down.svg);
-  background-position: 0 50%;
-  background-repeat: no-repeat;
 }
 
 // dashboard
 
 .card-dashboard {
-  text-align: center;
 }
 
 .dashboard {
@@ -80,22 +124,26 @@
     justify-content: center;
     column-gap: 0.5rem;
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: var(--fs-100);
+    line-height: 1.2;
     font-weight: $fw-700;
-    margin-bottom: 2em;
   }
 
   &-number {
     font-weight: $fw-700;
-    font-size: 3.5rem;
-    line-height: 1.25em;
+    font-size: var(--fs-700);
+    line-height: 0.86em;
+    letter-spacing: -0.125rem;
+    margin-top: 0.5em;
   }
 
   &-text {
     color: var(--text-muted);
     text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.375rem;
+    font-size: var(--fs-100);
+    line-height: 1.2;
+    letter-spacing: 0.3125em;
+    margin-top: 0.75em;
     margin-bottom: 2em;
   }
 }
@@ -112,6 +160,8 @@
 .overview {
   &-text {
     font-weight: $fw-700;
+    font-size: var(--fs-200);
+    line-height: 1.2;
     color: var(--text-muted);
   }
 
@@ -122,6 +172,6 @@
   &-number {
     align-self: end;
     font-weight: $fw-700;
-    font-size: 2rem;
+    font-size: var(--fs-600);
   }
 }

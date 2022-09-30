@@ -1,11 +1,46 @@
-const body = document.querySelector('body');
-const toggle = document.querySelector('.toggle');
+const toggle = document.querySelector('#toggle-darkmode');
 
-toggle.addEventListener('click', () => {
-  const theme = body.dataset.theme;
-  if (theme !== undefined) {
-    delete body.dataset.theme;
+window.addEventListener('DOMContentLoaded', getTheme);
+toggle.addEventListener('click', switchTheme);
+
+function getTheme() {
+  const ls = localStorage.getItem('color-mode');
+
+  if (ls) {
+    updateUI(ls);
   } else {
-    body.dataset.theme = 'dark';
+    const themeDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (themeDark.matches) {
+      colorMode = 'dark';
+      setLS(colorMode);
+      updateUI(colorMode);
+    }
   }
-});
+}
+
+function switchTheme() {
+  let colorMode = document.documentElement.getAttribute('data-color-mode');
+
+  if (colorMode === 'dark') {
+    colorMode = 'light';
+  } else {
+    colorMode = 'dark';
+  }
+
+  setLS(colorMode);
+  updateUI(colorMode);
+}
+
+function setLS(color) {
+  localStorage.setItem('color-mode', color);
+}
+
+function updateUI(color) {
+  document.documentElement.setAttribute('data-color-mode', color);
+
+  if (color === 'light') {
+    toggle.checked = false;
+  } else {
+    toggle.checked = true;
+  }
+}

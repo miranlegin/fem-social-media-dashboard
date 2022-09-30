@@ -1,9 +1,12 @@
-<li class="card-dashboard" data-network="{{ icon }}">
-    <div class="dashboard-url">
-        <img src="svg/icon-{{ icon }}.svg" />
-        <span>{{ url }}</span>
-    </div>
-    <div class="dashboard-number">{{ number }}</div>
-    <div class="dashboard-text">{{ text }}</div>
-    <div class="card-trend" data-trend="{{ trend }}">{{ stats }}</div>
+<li class="card-item" data-network="{{ icon }}">
+    <dl class="card-dashboard">
+        <dt class="dashboard-url">
+            <img src="svg/icon-{{ icon }}.svg" alt="{{ icon }}" />
+            <span class="sr-only">user</span>
+            <span>{{ url }}</span>
+        </dt>
+        <dd class="dashboard-number">{{ number }}</dd>
+        <dd class="dashboard-text">{{ text }}</dd>
+        <dd class="card-trend" data-trend="{{ trend }}"><span class="sr-only">{{ trend }} </span>{{ stats }}</dd>
+    </dl>
 </li>

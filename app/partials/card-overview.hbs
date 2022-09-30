@@ -1,8 +1,10 @@
-<li class="card-overview">
-    <div class="overview-text">{{ text }}</div>
-    <div class="overview-icon">
-        <img src="svg/icon-{{ icon }}.svg" />
-    </div>
-    <div class="overview-number">{{ number }}</div>
-    <div class="card-trend" data-trend="{{ trend }}">{{ percentage }}</div>
+<li class="card-item">
+    <dl class="card-overview">
+        <dt class="overview-text">{{ text }}</dt>
+        <dd class="overview-icon">
+            <img src="svg/icon-{{ icon }}.svg" alt="{{ icon }}" />
+        </dd>
+        <dd class="overview-number">{{ number }}</dd>
+        <dd class="card-trend" data-trend="{{ trend }}">{{ percentage }} <span class="sr-only">{{ trend }}</span></dd>
+    </dl>
 </li>

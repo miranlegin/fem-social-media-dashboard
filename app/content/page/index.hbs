@@ -1,34 +1,32 @@
-<main class="container">
-
+<header class="container">
+    <div>
+        <h1>Social Media Dashboard</h1>
+        <dl class="heading-stats">
+            <dt>Total Followers:</dt>
+            <dd>23,004</dd>
+        </dl>
+    </div>
     <div class="switch">
-        <button class="toggle">Dark Mode</button>
-
         <label>
             Dark Mode
-            <input type="checkbox" role="switch">
+            <input type="checkbox" role="switch" id="toggle-darkmode">
+            <span></span>
         </label>
     </div>
+</header>
 
-    <h1>Social Media Dashboard</h1>
-    <dl>
-        <dt>Total Followers:</dt>
-        <dd>23,004</dd>
-    </dl>
-
-
-    <ul class="cards-holder">
+<main class="container">
+    <h2 class="sr-only">Social media channels today</h2>
+    <ul class="cards-holder" data-cards="dashboard">
         {{#each dashboard }}
         {{> card-dashboard }}
         {{/each }}
     </ul>
 
-
     <h2>Overview - Today</h2>
-
-    <ul class="cards-holder">
+    <ul class="cards-holder" data-cards="overview">
         {{#each overview }}
         {{> card-overview }}
         {{/each }}
     </ul>
-
 </main>
